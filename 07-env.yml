@@ -1,0 +1,13 @@
+apiversion: v1 
+kind: pod 
+metadata: 
+ name: env-varaibles
+ spec: 
+  container: 
+   - name: nginx 
+     image: nginx 
+     env: 
+     - name: project
+       value: roboshop 
+     - name: environment 
+       value: dev   
