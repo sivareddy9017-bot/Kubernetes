@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: pod
+metadata:
+  name: roboshop
+  namespace: nginx-roboshop
+  spec:
+     container: 
+      - name: nginx
+        image: nginx
+  
