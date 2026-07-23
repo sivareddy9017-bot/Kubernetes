@@ -2,6 +2,6 @@ apiversion: v1
 kind: namespace
 Metadata:
    - name: nginx- roboshop 
-     label: 
+     labels: 
        project: Roboshop
        Environmnet: dev
