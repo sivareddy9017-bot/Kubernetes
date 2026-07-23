@@ -1,8 +1,8 @@
-apiversion: v1 
-kind: ConfigMap 
-metadata: 
-  name: nginx-config 
-data: 
-   project: "roboshop"
-   environment: "dev"
-   component: "frontend"  
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+data:
+  project: "roboshop"
+  environment: "dev"
+  component: "frontend"
