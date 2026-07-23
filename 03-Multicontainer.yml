@@ -1,11 +1,11 @@
-apiversion: v1
-kind: pod 
+apiVersion: v1
+kind: Pod
 metadata:
-  -name: multi-container
-  spec:
-  containers: 
-    - name: nginx 
-      image: nginx 
+  name: multi-container
+spec:
+  containers:
+    - name: nginx
+      image: nginx
     - name: almalinux
       image: almalinux
   
