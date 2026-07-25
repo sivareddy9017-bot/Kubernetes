@@ -5,12 +5,11 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    # labels are used as selectors
     project: roboshop
     component: frontend
     environment: dev
   ports:
-  - protocol: TCP
-    port: 80 # servie port
-    targetPort: 80 # container port
-    nodeport: 31586
+    - protocol: TCP
+      port: 80        # Service port
+      targetPort: 80  # Container port
+      nodePort: 31586
