@@ -29,3 +29,18 @@ spec:
       containers:
       - name: nginx
         image: nginx:stable-alpine3.23-perl
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-lb
+spec:
+  type: LoadBalancer
+  selector:
+    project: roboshop
+    component: frontend
+    environment: dev
+  ports:
+    - protocol: TCP
+      port: 80        # Service port
+      targetPort: 80  # Container port        
