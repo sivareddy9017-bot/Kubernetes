@@ -1,3 +1,4 @@
+# this service is used to idenetify the other nodes in the cluster
 apiVersion: v1
 kind: Service
 metadata:
@@ -36,7 +37,7 @@ spec:
       component: mongodb
   serviceName: "mongodb-headless" # we should attach headless service
   #replicas: 3
-  replicas: 1 # by default is 1
+  replicas: 3 # by default is 1
   # Pod definition
   template:
     metadata:
@@ -61,7 +62,7 @@ spec:
       resources:
         requests:
           storage: 1Gi
----
+---  # This below service we can use to balencing the load
 apiVersion: v1
 kind: Service
 metadata:
