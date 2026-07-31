@@ -4,7 +4,7 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: shankar-s-cluster
+  name: naga-cluster
   region: us-east-1
 
 managedNodeGroups:
