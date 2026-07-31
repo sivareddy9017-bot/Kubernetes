@@ -48,11 +48,11 @@ kind: Service
 metadata:
   name: nginx-lb
 spec:
-  clusterIp: None
+  clusterIP: None
   selector:
     project: roboshop
     component: frontend
-    ports:
+  ports:
     - protocol: TCP
-      port: 80        # Service port
-      targetPort: 80  # Container port               
+      port: 80
+      targetPort: 80             
