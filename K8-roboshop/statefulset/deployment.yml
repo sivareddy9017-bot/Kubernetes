@@ -9,7 +9,7 @@ metadata:
     tier: frontend
     component: frontend
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     # using these labels replica set selects the pod
     matchLabels:
@@ -46,7 +46,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-lb
+  name: nginx-headless
 spec:
   clusterIP: None
   selector:
