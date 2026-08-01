@@ -4,20 +4,34 @@ metadata:
   name: nginx-affinity
   labels:
     env: test
-
 spec:
   affinity:
     nodeAffinity:
-      # Hard rule
+      # Hard Rule
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
-          - matchExpressions:
-              - key: topology.kubernetes.io/zone
-                operator: In
-                values:
-                  - us-east-1a
-                  - us-east-1f
-
+        - matchExpressions:
+          - key: topology.kubernetes.io/zone
+            operator: In
+            values:
+            - us-east-1d
+            - us-east-1c
+      # Soft Rule
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 100
+        preference:
+          matchExpressions:
+          - key: project
+            operator: In
+            values:
+            - roboshop
+      - weight: 10
+        preference:
+          matchExpressions:
+          - key: project
+            operator: In
+            values:
+            - amazon
   containers:
-    - name: nginx
-      image: nginx
+  - name: nginx
+    image: nginx
