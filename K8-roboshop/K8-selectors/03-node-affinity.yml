@@ -4,18 +4,20 @@ metadata:
   name: nginx-affinity
   labels:
     env: test
+
 spec:
   affinity:
     nodeAffinity:
-      # Hard Rule
+      # Hard rule
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
-        - matchExpressions:
-          - key: topology.kubernetes.io/zone
-            operator: In
-            values:
-            - us-east-1a
-            - us-east-1f
-        containers:
-         - name: nginx
-           image: nginx      
+          - matchExpressions:
+              - key: topology.kubernetes.io/zone
+                operator: In
+                values:
+                  - us-east-1a
+                  - us-east-1f
+
+  containers:
+    - name: nginx
+      image: nginx
