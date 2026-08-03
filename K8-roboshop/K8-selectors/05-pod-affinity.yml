@@ -1,0 +1,11 @@
+apiversion: v1 
+kind: pod 
+metadat: 
+ name: pod-1 
+ labels: 
+   tier: database 
+   spec: 
+   container: 
+   - name: nginx 
+     image: nginx 
+     
